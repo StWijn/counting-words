@@ -25,7 +25,6 @@ class WordFrequencyAnalyzerImplTest {
 	void testFunctionalityCaseSensitivityAndSeperatorsOf__calculateHighestFrequency(String text) {
 
 		assertEquals(analyzerObj.calculateHighestFrequency(text), 2, "failure, the word \"the\" appears twice and thus this method should return 2");
-
 	}
 
 	@ParameterizedTest
@@ -40,7 +39,6 @@ class WordFrequencyAnalyzerImplTest {
 				"failure, the word \"sun\" appears once and thus method should return 1");
 		assertEquals(analyzerObj.calculateFrequencyForWord(text, "lake"), 1,
 				"failure, the word \"lake\" appears once and thus method should return 1");
-
 	}
 
 	@ParameterizedTest
@@ -68,7 +66,6 @@ class WordFrequencyAnalyzerImplTest {
 			assertEquals(expectedWordFrequencyObject.getFrequency(), actualWordFrequencyList.get(i).getFrequency(),
 					"the expected and actual frequency are not the same");
 		}
-
 	}
 
 	@Test

@@ -7,7 +7,8 @@ import javax.ws.rs.core.MediaType;
  
 import org.glassfish.jersey.client.ClientConfig;
  
-//als alternatief op Postman of browser om HTTP requests in te dienen (na opstarten van server, deze class runnen als Java Application).
+//als (semi purposeless) alternatief op Postman of browser om HTTP requests in te dienen (na opstarten van server kan je http requests invoken door deze class te runnen)
+//de echte tests zitten in de test-map (classes WordResourceTest.java en WordFrequencyAnalyzerImplTest.java)
 public class TestClient {
  
     public static void main(String[] args) {
@@ -19,9 +20,8 @@ public class TestClient {
         String response = target.request()
                     .accept(MediaType.APPLICATION_JSON)
                     .get(String.class);
-         
+        
         System.out.println(response);
- 
     }
  
 }

@@ -81,10 +81,10 @@
 			<scope>test</scope>
 		</dependency>
 
-
 	</dependencies>
 
 	<build>
+	<finalName>counting-words</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -102,6 +102,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

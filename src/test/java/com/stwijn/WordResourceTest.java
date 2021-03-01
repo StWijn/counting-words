@@ -38,8 +38,7 @@ class WordResourceTest extends JerseyTest {
 			}
 		});		
 		return config;
-	}
-	
+	}	
 	
 	@Test
 	public void testJSON_calculateHighestFrequency() {
@@ -47,15 +46,13 @@ class WordResourceTest extends JerseyTest {
 		
 		assertEquals(Status.OK.getStatusCode(), response.getStatus(), "HTTP status code should be 200(OK)");
 		assertEquals(MediaType.APPLICATION_JSON, response.getHeaderString(HttpHeaders.CONTENT_TYPE), "should return JSON file format (calculateHighestFrequency)");		
-	}
-	
+	}	
 	
 	@Test
 	public void testCalculateHighestFrequency() {
 		final String response = target("/calc/The sun shines over the lake").request().get(String.class);
 		assertEquals("2", response);
 	}
-
 	
 	@Test
 	public void testJSON_calculateMostFrequentNWords() {				
@@ -63,8 +60,7 @@ class WordResourceTest extends JerseyTest {
 		
 		assertEquals(Status.OK.getStatusCode(), response.getStatus(), "HTTP status code should be 200(OK)");		
 		assertEquals(MediaType.APPLICATION_JSON, response.getHeaderString(HttpHeaders.CONTENT_TYPE), "should return JSON file format (calculateMostFrequentNWords)");
-	}
-	
+	}	
 	
 	@Test
 	public void testCalculateMostFrequentNWords() {		
@@ -72,12 +68,11 @@ class WordResourceTest extends JerseyTest {
 				.get(new GenericType<List<WordFrequencyImpl>>() {});
 		
 		for (WordFrequencyImpl w : list) {
-			assertTrue((w instanceof WordFrequency), "should be true");
-		}
+			assertTrue((w instanceof WordFrequency), "returned list should be of WordFrequency objects");
+		}	
 		
 		assertEquals(3, list.size(), "size of list should be 3");		
-	}
-	
+	}	
 	
 	@Test
 	public void testJSON_calculateFrequencyForWord() {
@@ -85,15 +80,13 @@ class WordResourceTest extends JerseyTest {
 		
 		assertEquals(Status.OK.getStatusCode(), response.getStatus(), "HTTP status code should be 200(OK)");
 		assertEquals(MediaType.APPLICATION_JSON, response.getHeaderString(HttpHeaders.CONTENT_TYPE), "should return JSON file format (calculateFrequencyForWord)");
-	}
-	
+	}	
 	
 	@Test
 	public void testCalculateFrequencyForWord() {
 		final String response = target("/calc/forword/The sun shines over the lake/sun").request().get(String.class);
 		assertEquals("1", response);
-	}
-	
+	}	
 
 	@BeforeAll
 	public void before() throws Exception {

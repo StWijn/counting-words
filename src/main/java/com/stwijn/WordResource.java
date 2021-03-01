@@ -16,8 +16,7 @@ import com.stwijn.word.WordFrequencyAnalyzer;
 public class WordResource {
 
 	@Inject
-	WordFrequencyAnalyzer impl;
-	
+	WordFrequencyAnalyzer impl;	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -40,7 +39,6 @@ public class WordResource {
 	@Path("/forword/{text}/{word}")
 	public int calculateFrequencyForWord(@PathParam("text") String text, @PathParam("word") String word) {
 						
-		return impl.calculateFrequencyForWord(text, word);
-		
+		return impl.calculateFrequencyForWord(text, word);		
 	}
 }
